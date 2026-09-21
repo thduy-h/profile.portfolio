@@ -1,89 +1,41 @@
-// @flow strict
-import { personalData } from '@/utils/data/personal-data';
-import Link from 'next/link';
+import { personalData } from "@/utils/data/personal-data";
+import Link from "next/link";
 import { BiLogoLinkedin } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
-import { FaFacebook, FaStackOverflow } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
-import ContactForm from './contact-form';
 
 function ContactSection() {
+  const details = [
+    { icon: MdAlternateEmail, label: personalData.email, href: `mailto:${personalData.email}` },
+    { icon: IoMdCall, label: personalData.phone, href: `tel:${personalData.phone}` },
+    { icon: CiLocationOn, label: personalData.address }
+  ];
+
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          CONTACT
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        <ContactForm />
-        <div className="lg:w-3/4 ">
-          <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <MdAlternateEmail
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>{personalData.email}</span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <IoMdCall
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.phone}
-              </span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <CiLocationOn
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.address}
-              </span>
-            </p>
+    <section id="contact" className="scroll-mt-24 py-16 lg:py-24" aria-labelledby="contact-heading">
+      <div className="rounded-2xl border border-[#353951] bg-gradient-to-br from-[#11152c] to-[#0a0d37] p-7 sm:p-10 lg:p-14">
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-center">
+          <div>
+            <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#16f2b3]">Let&apos;s connect</p>
+            <h2 id="contact-heading" className="mt-3 text-3xl font-bold text-white">Research, AI, and real-world systems</h2>
+            <p className="mt-5 max-w-2xl leading-7 text-gray-300">I&apos;m open to AI internships, computer vision roles, research opportunities, and collaborations on deployable intelligent systems.</p>
+            <Link href={`mailto:${personalData.email}`} className="mt-7 inline-flex rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white transition-transform hover:-translate-y-0.5">Email me</Link>
           </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
-              <IoLogoGithub
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
-              <BiLogoLinkedin
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.twitter}>
-              <FaXTwitter
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.stackOverflow}>
-              <FaStackOverflow
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.facebook}>
-              <FaFacebook
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
+          <div className="space-y-4">
+            {details.map(({ icon: Icon, label, href }) => {
+              const content = <><Icon className="shrink-0 text-pink-400" size={24} /><span className="break-all sm:break-normal">{label}</span></>;
+              return href ? <Link key={label} href={href} className="flex items-center gap-3 rounded-lg border border-[#353951] p-3 text-gray-200 hover:border-[#16f2b3]/60 hover:text-[#16f2b3]">{content}</Link> : <div key={label} className="flex items-center gap-3 rounded-lg border border-[#353951] p-3 text-gray-200">{content}</div>;
+            })}
+            <div className="flex gap-3 pt-2">
+              <Link href={personalData.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="rounded-full border border-[#353951] p-3 text-gray-200 hover:border-[#16f2b3] hover:text-[#16f2b3]"><IoLogoGithub size={24} /></Link>
+              <Link href={personalData.linkedIn} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="rounded-full border border-[#353951] p-3 text-gray-200 hover:border-[#16f2b3] hover:text-[#16f2b3]"><BiLogoLinkedin size={24} /></Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default ContactSection;

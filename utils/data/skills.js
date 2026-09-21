@@ -1,110 +1,34 @@
-export const skillsData = [
-  'HTML',
-  'CSS',
-  'Javascript',
-  'Typescript',
-  'React',
-  'Next JS',
-  'Tailwind',
-  'MongoDB',
-  'MySQL',
-  'PostgreSQL',
-  'Git',
-  'AWS',
-  'Bootstrap',
-  'Docker',
-  'Go',
-  'Figma',
-  'Firebase',
-  'MaterialUI',
-  'Nginx',
-  'Strapi'
-]
+export const skillGroups = [
+  {
+    name: "Programming & Data",
+    skills: ["Python", "C/C++ fundamentals", "NumPy", "Pandas", "Data preprocessing", "Statistics", "Model evaluation"]
+  },
+  {
+    name: "Deep Learning",
+    skills: ["PyTorch", "TensorFlow / Keras", "CNNs", "Attention mechanisms", "LSTM", "Temporal modeling"]
+  },
+  {
+    name: "Computer Vision",
+    skills: ["OpenCV", "YOLO-based detection", "Image preprocessing", "Video preprocessing", "Object tracking", "Pose estimation", "Person re-identification", "Video understanding"]
+  },
+  {
+    name: "Deployment & Tools",
+    skills: ["ONNX", "TorchScript", "Basic TensorRT", "Docker", "REST API integration", "Linux", "Git", "Jupyter", "Google Colab"]
+  },
+  {
+    name: "Robotics & Edge AI",
+    skills: ["Real-time camera pipelines", "Edge inference", "Sensor integration", "ESP32", "Basic ROS / ROS2"]
+  }
+];
 
-// Choose your skills from below. Make sure it's in the same format and spelled correctly.
-// Couldn't find the required skills? Raise an issue on github at https://github.com/hhhrrrttt222111/developer-portfolio/issues/new
-
-
-// AVAILABLE SKILLS
-
-/* 
-  HTML
-  CSS
-  JS 
-  React
-  Next JS
-  Nuxt JS
-  Node JS
-  Vue
-  Angular
-  Docker
-  Photoshop
-  Illustrator
-  Svelte
-  GCP
-  Azure
-  Fastify
-  Haxe
-  Ionic
-  Markdown
-  Microsoft Office
-  Picsart
-  Sketch
-  Unity
-  WolframAlpha
-  Adobe XD
-  After Effects
-  Bootstrap
-  Bulma
-  CapacitorJs
-  Coffeescript
-  MemSQL
-  C
-  C++
-  C#
-  Python
-  Java
-  Julia
-  Matlab
-  Swift
-  Ruby
-  Kotlin
-  Go
-  PHP
-  Flutter
-  Dart
-  Typescript
-  Swift
-  Git
-  Figma
-  Canva
-  Ubuntu
-  Bootstrap
-  MongoDB
-  Tailwind
-  ViteJS
-  VuetifyJS
-  MySQL
-  PostgreSQL
-  Prisma
-  AWS
-  Firebase
-  Blender
-  Premiere Pro
-  Adobe Audition
-  Deno
-  Django
-  Gimp
-  Graphql
-  Lightroom
-  MaterialUI
-  Nginx
-  Numpy
-  OpenCV
-  Pytorch
-  Selenium
-  Strapi
-  Tensorflow
-  Webex
-  Wordpress
-*/
+export const iconSkills = {
+  Python: "Python",
+  NumPy: "Numpy",
+  Pandas: "Pandas",
+  PyTorch: "Pytorch",
+  "TensorFlow / Keras": "Tensorflow",
+  OpenCV: "OpenCV",
+  Docker: "Docker",
+  Linux: "Linux",
+  Git: "Git"
+};

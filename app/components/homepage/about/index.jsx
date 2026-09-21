@@ -1,40 +1,24 @@
-// @flow strict
-
 import { personalData } from "@/utils/data/personal-data";
-import Image from "next/image";
-
+import { FiMapPin } from "react-icons/fi";
 
 function AboutSection() {
   return (
-    <div id="about" className="my-12 lg:my-16 relative">
-      <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          ABOUT ME
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-        <div className="order-2 lg:order-1">
-          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-            Who I am?
-          </p>
-          <p className="text-gray-200 text-sm lg:text-lg">
-            {personalData.description}
-          </p>
+    <section id="about" className="scroll-mt-24 py-16 lg:py-24" aria-labelledby="about-heading">
+      <div className="grid grid-cols-1 gap-8 rounded-2xl border border-[#25213b] bg-[#11152c]/60 p-6 sm:p-8 lg:grid-cols-[0.42fr_1fr] lg:gap-14 lg:p-12">
+        <div>
+          <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#16f2b3]">Profile</p>
+          <h2 id="about-heading" className="mt-3 text-3xl font-bold text-white">About me</h2>
+          <div className="mt-6 flex items-start gap-3 text-sm text-violet-200">
+            <FiMapPin className="mt-0.5 shrink-0 text-pink-500" size={18} />
+            <span>{personalData.address}<br />{personalData.availability}</span>
+          </div>
         </div>
-        <div className="flex justify-center order-1 lg:order-2">
-          <Image
-            src={personalData.profile}
-            width={280}
-            height={280}
-            alt="Abu Said"
-            className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
-            style={{ width: 'auto', height: 'auto' }}
-          />
+        <div className="space-y-5 text-base leading-8 text-gray-300 lg:text-lg">
+          {personalData.description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default AboutSection;

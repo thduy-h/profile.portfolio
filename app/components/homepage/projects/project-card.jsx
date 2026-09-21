@@ -1,71 +1,27 @@
-// @flow strict
-
-import * as React from 'react';
+import Link from "next/link";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 function ProjectCard({ project }) {
-
   return (
-    <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">
-      <div className="flex flex-row">
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-        <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
+    <article className="w-full rounded-xl border border-[#1b2c68a0] bg-gradient-to-br from-[#11152c] to-[#0a0d37] p-6 shadow-[0_0_30px_rgba(0,0,0,0.25)] lg:p-8">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <span className="rounded-full border border-pink-500/30 bg-pink-500/10 px-3 py-1 text-xs font-medium text-pink-300">{project.type}</span>
+        <span className="font-mono text-xs text-[#16f2b3]">{project.duration}</span>
       </div>
-      <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
-        <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-red-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
-          <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
+      <h3 className="mt-5 text-xl font-semibold leading-8 text-white lg:text-2xl">{project.name}</h3>
+      <p className="mt-2 text-sm text-violet-300">{project.organization} · {project.role}</p>
+      <p className="mt-5 leading-7 text-gray-300">{project.description}</p>
+      <div className="mt-6 flex flex-wrap gap-2">
+        {project.tools.map((tool) => <span key={tool} className="rounded-md bg-[#1a1443] px-2.5 py-1.5 text-xs text-violet-100">{tool}</span>)}
+      </div>
+      {(project.code || project.demo) && (
+        <div className="mt-6 flex gap-4">
+          {project.code && <Link href={project.code} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-[#16f2b3] hover:underline"><FiGithub /> Code</Link>}
+          {project.demo && <Link href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-[#16f2b3] hover:underline"><FiExternalLink /> Demo</Link>}
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl">
-          {project.name}
-        </p>
-      </div>
-      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
-        <code className="font-mono text-xs md:text-sm lg:text-base">
-          <div className="blink">
-            <span className="mr-2 text-pink-500">const</span>
-            <span className="mr-2 text-white">project</span>
-            <span className="mr-2 text-pink-500">=</span>
-            <span className="text-gray-400">{'{'}</span>
-          </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-            <span className="text-gray-400">{`'`}</span>
-            <span className="text-amber-300">{project.name}</span>
-            <span className="text-gray-400">{`',`}</span>
-          </div>
-
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className=" text-white">tools:</span>
-            <span className="text-gray-400">{` ['`}</span>
-            {
-              project.tools.map((tag, i) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300">{tag}</span>
-                  {
-                    project.tools?.length - 1 !== i &&
-                    <span className="text-gray-400">{`', '`}</span>
-                  }
-                </React.Fragment>
-              ))
-            }
-            <span className="text-gray-400">{"],"}</span>
-          </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
-            <span className="text-orange-400">{project.role}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">Description:</span>
-            <span className="text-cyan-400">{' ' + project.description}</span>
-            <span className="text-gray-400">,</span>
-          </div>
-          <div><span className="text-gray-400">{`};`}</span></div>
-        </code>
-      </div>
-    </div>
+      )}
+    </article>
   );
-};
+}
 
 export default ProjectCard;
