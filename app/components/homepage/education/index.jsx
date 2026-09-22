@@ -2,6 +2,8 @@
 import { educations } from "@/utils/data/educations";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
+import educationAnimation from "../../../assets/lottie/study.json";
+import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
 
 function Education() {
@@ -30,7 +32,8 @@ function Education() {
       </div>
 
       <div className="py-8">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start">
+          <div className="mx-auto hidden w-48 lg:block" aria-hidden="true"><AnimationLottie animationPath={educationAnimation} /></div>
           <div className="flex flex-col gap-6">
               {
                 educations.map(education => (

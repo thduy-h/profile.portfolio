@@ -7,6 +7,7 @@ export const publications = [
     year: 2026,
     description: "Developed a spatial-temporal video recognition pipeline combining YOLOv11-based person detection, AFNet feature learning, and TemporalSA-MoViNet for efficient violence recognition.",
     publisher: "Wiley",
+    doi: "10.1002/cpe.70811",
     link: "https://doi.org/10.1002/cpe.70811",
     linkLabel: "View DOI",
     tags: ["Computer Vision", "Video Understanding", "Efficient AI"]

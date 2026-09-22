@@ -46,11 +46,11 @@ No environment variables are required to build or run the current portfolio. Goo
 NEXT_PUBLIC_GTM=GTM-XXXXXXX
 ```
 
-The current contact experience uses direct `mailto:` and `tel:` links and does not require delivery secrets. The retained upstream contact API route is inactive unless explicitly integrated and configured.
+The contact section includes a form that opens a prefilled email draft in the visitor's mail app, plus direct `mailto:` and `tel:` links. It does not require delivery secrets. The retained upstream contact API route is inactive unless explicitly integrated and configured.
 
 ## CV and profile image
 
-The CV is available at `public/Thanh-Duy-Huynh-CV.pdf` and linked from the hero. No personal portrait is stored in this repository, so the interface uses a neutral “TD” monogram.
+The CV is available at `public/Thanh-Duy-Huynh-CV.pdf` and linked from the hero. The supplied portrait is stored as `public/thanh-duy-huynh.webp`, and the supplied logo is used for the favicon.
 
 ## Upstream attribution
 

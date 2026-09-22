@@ -8,7 +8,7 @@ function Leadership() {
         <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#16f2b3]">Community</p>
         <h2 id="leadership-heading" className="mt-3 text-3xl font-bold text-white">Leadership & Activities</h2>
       </div>
-      <div className="grid gap-5 lg:grid-cols-3">
+      <div className="grid items-start gap-5 lg:grid-cols-3">
         {leadership.map((item) => (
           <article key={item.id} className="rounded-xl border border-[#25213b] bg-gradient-to-br from-[#11152c] to-[#0a0d37] p-6">
             <div className="flex items-center justify-between gap-3"><FiUsers className="text-pink-400" size={22} /><span className="font-mono text-xs text-[#16f2b3]">{item.duration}</span></div>

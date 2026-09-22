@@ -1,6 +1,9 @@
 import { iconSkills, skillGroups } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
+
+const featuredSkills = ["Python", "PyTorch", "OpenCV", "NumPy", "Pandas", "TensorFlow / Keras", "Docker", "Linux", "Git"];
 
 function Skills() {
   return (
@@ -8,6 +11,18 @@ function Skills() {
       <div className="mb-10 text-center">
         <p className="font-mono text-sm uppercase tracking-[0.2em] text-[#16f2b3]">Technical foundation</p>
         <h2 id="skills-heading" className="mt-3 text-3xl font-bold text-white">Skills & Expertise</h2>
+      </div>
+      <div className="mb-10 overflow-hidden" aria-label="Selected AI and computer vision tools">
+        <Marquee gradient={false} speed={38} pauseOnHover pauseOnClick autoFill>
+          {featuredSkills.map((skill) => {
+            const iconName = iconSkills[skill];
+            const icon = iconName ? skillsImage(iconName) : null;
+            return <div key={skill} className="mx-2 flex min-w-32 flex-col items-center justify-center gap-3 rounded-xl border border-[#353951] bg-[#11152c] p-5 text-sm text-gray-100 transition-colors hover:border-violet-500 sm:min-w-40">
+              {icon && <Image src={icon.src} alt="" width={38} height={38} className="h-9 w-9 object-contain" />}
+              <span>{skill}</span>
+            </div>;
+          })}
+        </Marquee>
       </div>
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map((group) => (

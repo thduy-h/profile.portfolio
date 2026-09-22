@@ -1,5 +1,5 @@
 export const contactsData = {
-  email: "thduy.h@outlook.com.vn",
+  email: "contact@thduyh.com",
   phone: "0899998741",
   address: "Can Tho, Vietnam",
   github: "https://github.com/thduy-h",

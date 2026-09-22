@@ -3,6 +3,8 @@
 import { experiences } from "@/utils/data/experience";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
+import experienceAnimation from "../../../assets/lottie/code.json";
+import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
 
 function Experience() {
@@ -26,7 +28,8 @@ function Experience() {
       </div>
 
       <div>
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start">
+          <div className="mx-auto hidden w-48 lg:block" aria-hidden="true"><AnimationLottie animationPath={experienceAnimation} /></div>
           <div className="flex flex-col gap-6">
               {
                 experiences.map(experience => (

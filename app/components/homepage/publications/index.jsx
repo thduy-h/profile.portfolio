@@ -22,6 +22,7 @@ function Publications() {
                 </div>
                 <h3 className="mt-4 text-xl font-semibold leading-8 text-white">{publication.title}</h3>
                 <p className="mt-2 text-sm font-medium text-violet-300">{publication.venue}{publication.publisher ? ` · ${publication.publisher}` : ""}</p>
+                {publication.doi && <p className="mt-2 font-mono text-xs text-gray-300">DOI: {publication.doi}</p>}
                 <p className="mt-4 leading-7 text-gray-300">{publication.description}</p>
                 {publication.results && <div className="mt-4 flex flex-wrap gap-2">{publication.results.map((result) => <span key={result} className="rounded-md border border-[#353951] bg-[#0d1224] px-3 py-1.5 text-xs text-gray-200">{result}</span>)}</div>}
                 <div className="mt-5 flex flex-wrap items-center gap-2">
