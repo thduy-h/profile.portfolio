@@ -1,21 +1,114 @@
 # Thanh Duy Huynh — AI & Computer Vision Portfolio
 
-A customized personal portfolio for Thanh Duy Huynh, focused on computer vision, applied AI, video understanding, Edge AI, research, and deployable intelligent systems.
+> AI Student · Computer Vision · Applied AI & Intelligent Systems
 
-Built with Next.js 16, React 19, Tailwind CSS 4, and the existing motion/visual system from the upstream `developer-portfolio` template.
+<p align="center">
+  <img src="./docs/preview/home.png" alt="Thanh Duy Huynh AI & Computer Vision Portfolio" width="100%" />
+</p>
 
-## Run locally
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Computer_Vision-Research-2563EB" />
+  <img src="https://img.shields.io/badge/Status-Active-22C55E" />
+</p>
 
-Requirements: Node.js 20+ and pnpm.
+<p align="center">
+  <a href="https://github.com/thduy-h">GitHub</a> ·
+  <a href="https://www.linkedin.com/in/thduyh">LinkedIn</a>
+</p>
+
+Personal portfolio website of **Thanh Duy Huynh**, showcasing work in computer vision, deep learning, video understanding, person re-identification, explainable AI, edge AI, research, and deployable intelligent systems.
+
+## About
+
+I am an Artificial Intelligence undergraduate at FPT University with hands-on experience across:
+
+- Computer Vision & Deep Learning
+- Object Detection & Video Understanding
+- Person Re-Identification
+- Explainable AI
+- Edge AI & Robotics
+- Model Deployment
+- Production-oriented AI workflows
+
+My work combines research and practical engineering, from peer-reviewed computer vision studies to deployed AI and web systems.
+
+## Tech Stack
+
+- **Next.js 16**
+- **React 19**
+- **Tailwind CSS 4**
+- JavaScript / JSX
+- Docker
+- Linux
+- REST API integration
+
+## Portfolio Content
+
+Primary portfolio data is organized under:
+
+```text
+utils/data/
+├── personal-data.js
+├── experience.js
+├── skills.js
+├── publications.js
+├── projects-data.js
+├── educations.js
+├── awards.js
+└── leadership.js
+```
+
+Homepage components are located under:
+
+```text
+app/components/homepage/
+```
+
+## Featured Areas
+
+### Research & Publications
+
+- Similarity-Driven Grad-CAM++ for Explainable Person Re-Identification
+- Human-Centric Violence Detection with YOLOv11-AFNet and TemporalSA-MoViNet
+- Ghost-YOLOv11 for Real-Time Mango Counting
+- HALE-YO for Aerial Tiny Person Detection
+
+### Selected Projects
+
+- **VNNETZERO** — Digital platform for Net Zero and green behavior governance
+- **SAYNTAX** — Voice-driven coding initiative for accessible web development
+- School-Violence Detection System
+- Person Re-Identification with MDHA & Dynamic Graph Convolution
+
+## Local Development
+
+Requirements:
+
+- Node.js 20+
+- pnpm
+
+Install dependencies:
 
 ```bash
 pnpm install
+```
+
+Start development server:
+
+```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open:
 
-For a production check:
+```text
+http://localhost:3000
+```
+
+Production check:
 
 ```bash
 pnpm lint
@@ -23,35 +116,45 @@ pnpm build
 pnpm start
 ```
 
-## Portfolio content
+## Environment Variables
 
-Primary content lives in `utils/data/`:
+No environment variables are required for the current portfolio build.
 
-- `personal-data.js` — identity, profile summary, and verified contact links
-- `experience.js` — professional experience
-- `skills.js` — grouped AI/CV skills
-- `publications.js` — publications and research
-- `projects-data.js` — selected AI projects
-- `educations.js` — education and coursework
-- `awards.js` — awards and certifications
-- `leadership.js` — leadership and activities
-
-Homepage components live under `app/components/homepage/`.
-
-## Environment variables
-
-No environment variables are required to build or run the current portfolio. Google Tag Manager is optional:
+Google Tag Manager is optional:
 
 ```env
 NEXT_PUBLIC_GTM=GTM-XXXXXXX
 ```
 
-The contact section includes a form that opens a prefilled email draft in the visitor's mail app, plus direct `mailto:` and `tel:` links. It does not require delivery secrets. The retained upstream contact API route is inactive unless explicitly integrated and configured.
+## CV & Profile Assets
 
-## CV and profile image
+The portfolio includes:
 
-The CV is available at `public/Thanh-Duy-Huynh-CV.pdf` and linked from the hero. The supplied portrait is stored as `public/thanh-duy-huynh.webp`, and the supplied logo is used for the favicon.
+```text
+public/Thanh-Duy-Huynh-CV.pdf
+public/thanh-duy-huynh.webp
+```
 
-## Upstream attribution
+The supplied personal logo is also used as the site favicon.
 
-This project is customized from [said7388/developer-portfolio](https://github.com/said7388/developer-portfolio). The upstream project history and attribution remain intact.
+## Preview
+
+<p align="center">
+  <img src="./docs/preview/research.png" alt="Research and Publications section" width="49%" />
+  <img src="./docs/preview/projects.png" alt="Selected Projects section" width="49%" />
+</p>
+
+## Contact
+
+**Thanh Duy Huynh**
+
+- GitHub: [@thduy-h](https://github.com/thduy-h)
+- LinkedIn: [thduyh](https://www.linkedin.com/in/thduyh)
+
+Open to opportunities in AI engineering, computer vision research, applied AI, and technical collaboration.
+
+## License & Attribution
+
+This portfolio was customized from the open-source `developer-portfolio` template.
+
+Original project attribution is retained where applicable.
